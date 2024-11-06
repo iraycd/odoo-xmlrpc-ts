@@ -4,12 +4,13 @@
   "description": "Type-safe Odoo XML-RPC client for Node.js written in TypeScript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "test": "jest --coverage",
     "test:ci": "jest --coverage --ci",
-    "lint": "eslint . --ext .ts",
-    "lint:fix": "eslint . --ext .ts --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "type-check": "tsc --noEmit",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "format:check": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -20,7 +21,7 @@
     "version": "pnpm run format && git add -A src",
     "postversion": "git push && git push --tags"
   },
-  "packageManager": "pnpm@8.0.0",
+  "packageManager": "pnpm@8.15.9+sha512.499434c9d8fdd1a2794ebf4552b3b25c0a633abcee5bb15e7b5de90f32f47b513aca98cd5cfd001c31f0db454bc3804edccd578501e4ca293a6816166bbd9f81",
   "engines": {
     "node": ">=18",
     "pnpm": ">=8"
@@ -47,7 +48,7 @@
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
-    "@types/node": "^20.17.6",
+    "@types/node": "^22.9.0",
     "@types/xmlrpc": "^1.3.10",
     "@typescript-eslint/eslint-plugin": "^8.13.0",
     "@typescript-eslint/parser": "^8.13.0",
@@ -57,7 +58,8 @@
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "ts-jest": "^29.2.5",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "globals": "15.12.0"
   },
   "files": [
     "dist/**/*"

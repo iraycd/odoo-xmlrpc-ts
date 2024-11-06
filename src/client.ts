@@ -4,7 +4,6 @@ import * as xmlrpc from 'xmlrpc';
 import {
   OdooConfig,
   OdooVersion,
-  OdooField,
   OdooFieldsMap,
   SearchOptions,
   SearchReadOptions,
