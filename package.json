@@ -4,7 +4,6 @@
   "description": "Type-safe Odoo XML-RPC client for Node.js written in TypeScript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "type": "module",
   "scripts": {
     "build": "tsc",
     "test": "jest --coverage",
