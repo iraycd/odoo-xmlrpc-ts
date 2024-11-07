@@ -37,12 +37,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/odoo-xmlrpc-ts.git"
+    "url": "git+https://github.com/iraycd/odoo-xmlrpc-ts.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/odoo-xmlrpc-ts/issues"
+    "url": "https://github.com/iraycd/odoo-xmlrpc-ts/issues"
   },
-  "homepage": "https://github.com/yourusername/odoo-xmlrpc-ts#readme",
+  "homepage": "https://github.com/iraycd/odoo-xmlrpc-ts#readme",
   "dependencies": {
     "xmlrpc": "^1.3.2"
   },
