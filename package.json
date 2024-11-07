@@ -1,12 +1,12 @@
 {
   "name": "odoo-xmlrpc-ts",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Type-safe Odoo XML-RPC client for Node.js written in TypeScript",
   "type": "module",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
+  "module": "dist/esm/index.js",
   "scripts": {
-    "build": "tsc",
     "test": "jest --coverage",
     "test:ci": "jest --coverage --ci",
     "lint": "eslint .",
@@ -18,7 +18,12 @@
     "prepublishOnly": "pnpm test && pnpm run lint",
     "preversion": "pnpm run lint",
     "version": "pnpm run format && git add -A src",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && npm run build:cjs && npm run build:esm && npm run build:types",
+    "build:cjs": "tsc -p tsconfig.cjs.json && echo '{\"type\": \"commonjs\"}' > dist/cjs/package.json",
+    "build:esm": "tsc -p tsconfig.esm.json && echo '{\"type\": \"module\"}' > dist/esm/package.json",
+    "build:types": "tsc -p tsconfig.types.json"
   },
   "packageManager": "pnpm@8.15.9+sha512.499434c9d8fdd1a2794ebf4552b3b25c0a633abcee5bb15e7b5de90f32f47b513aca98cd5cfd001c31f0db454bc3804edccd578501e4ca293a6816166bbd9f81",
   "engines": {
@@ -61,7 +66,8 @@
     "globals": "15.12.0"
   },
   "files": [
-    "dist/**/*"
+    "dist/",
+    "src/"
   ],
   "lint-staged": {
     "*.{js,ts}": [
