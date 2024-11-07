@@ -12,10 +12,11 @@ A type-safe Odoo XML-RPC client for Node.js written in TypeScript. This package 
 - 📝 Built-in TypeScript interfaces for Odoo models
 - 🔍 Type-safe domain builders
 - 📦 Zero external dependencies except xmlrpc
+- 🔄 Supports both ESM and CommonJS
 
 ## Prerequisites
 
-- Node.js >= 16
+- Node.js >= 18
 - pnpm >= 8
 - Odoo instance with XML-RPC enabled
 - API access enabled in your Odoo instance
@@ -40,10 +41,25 @@ yarn add odoo-xmlrpc-ts
 
 ## Usage
 
+### ESM Import
+
+```typescript
+import { OdooClient } from 'odoo-xmlrpc-ts';
+```
+
+### CommonJS Require
+
+```javascript
+const { OdooClient } = require('odoo-xmlrpc-ts');
+```
+
+
 ### Basic Example
 
 ```typescript
 import { OdooClient } from 'odoo-xmlrpc-ts';
+// Or for CommonJS:
+// const { OdooClient } = require('odoo-xmlrpc-ts');
 
 // Define your model interfaces
 interface Partner {
