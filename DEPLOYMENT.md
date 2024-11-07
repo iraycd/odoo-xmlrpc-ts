@@ -54,7 +54,6 @@ The GitHub Actions workflow will automatically:
 - Run tests
 - Build the package
 - Publish to npm registry
-- Publish to GitHub Packages
 
 ## Manual Deployment
 
@@ -100,24 +99,6 @@ Users can then install the package using:
 npm install odoo-xmlrpc-ts
 # or
 pnpm add odoo-xmlrpc-ts
-```
-
-## Package Configuration
-
-Ensure your package.json has the correct configuration:
-
-```json
-{
-  "name": "odoo-xmlrpc-ts",
-  "version": "X.Y.Z",
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": ["dist"],
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts"
-}
 ```
 
 ## Troubleshooting
