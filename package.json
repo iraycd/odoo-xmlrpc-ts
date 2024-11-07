@@ -1,6 +1,6 @@
 {
   "name": "odoo-xmlrpc-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Type-safe Odoo XML-RPC client for Node.js written in TypeScript",
   "type": "module",
   "main": "dist/index.js",
@@ -15,7 +15,6 @@
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "format:check": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\"",
     "prepare": "husky install",
-    "postinstall": "husky install",
     "prepublishOnly": "pnpm test && pnpm run lint",
     "preversion": "pnpm run lint",
     "version": "pnpm run format && git add -A src",
