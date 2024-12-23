@@ -1,6 +1,6 @@
 {
   "name": "odoo-xmlrpc-ts",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Type-safe Odoo XML-RPC client for Node.js written in TypeScript",
   "type": "module",
   "main": "./dist/cjs/index.js",
