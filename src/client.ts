@@ -69,7 +69,7 @@ export class OdooClient {
     }
   }
 
-  private async execute<T>(
+  public async execute<T>(
     model: string,
     method: string,
     args: any[] = [],

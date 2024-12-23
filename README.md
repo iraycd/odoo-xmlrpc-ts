@@ -201,6 +201,23 @@ Delete records.
 
 Get field information for a model.
 
+#### `async execute<T>(model: string, method: string, args?: any[], kwargs?: object): Promise<T>`
+
+Execute any method on an Odoo model. This is useful for calling custom methods or workflow actions.
+
+```typescript
+// Example: Confirm a sale order
+await client.execute('sale.order', 'action_confirm', [orderId]);
+
+// Example: Send email using template
+await client.execute('mail.template', 'send_mail', [templateId, recordId]);
+
+// Example: Custom method with keyword arguments
+await client.execute('your.model', 'your_method', [arg1, arg2], {
+  kwarg1: 'value1',
+  kwarg2: 'value2'
+});
+
 ## Error Handling
 
 The client includes built-in error classes:
