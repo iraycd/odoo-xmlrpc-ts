@@ -3,9 +3,6 @@ export interface OdooConfig {
   db: string;
   username: string;
   password: string;
-  options?: {
-    isSecure?: boolean;
-  };
 }
 
 export interface OdooVersion {
