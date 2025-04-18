@@ -19,8 +19,13 @@ export class OdooClient {
 
   constructor(config: OdooConfig) {
     this.config = config;
-    this.common = xmlrpc.createClient(`${config.url}/xmlrpc/2/common`);
-    this.object = xmlrpc.createClient(`${config.url}/xmlrpc/2/object`);
+
+    const protocol = config.url.startsWith('https') ? 'https' : 'http';
+
+    const createClient = protocol === 'https' ? xmlrpc.createSecureClient : xmlrpc.createClient;
+
+    this.common = createClient(`${config.url}/xmlrpc/2/common`);
+    this.object = createClient(`${config?.url}/xmlrpc/2/object`);
   }
 
   private methodCall<T>(client: xmlrpc.Client, method: string, params: any[]): Promise<T> {
