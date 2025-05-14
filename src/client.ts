@@ -130,8 +130,8 @@ export class OdooClient {
     return await this.execute(model, 'create', [values]);
   }
 
-  public async write<T extends object>(model: string, ids: number[], values: T): Promise<boolean> {
-    return await this.execute(model, 'write', [ids, values]);
+  public async write<T extends object>(model: string, ids: number[], values: T, options: SearchOptions = {}): Promise<boolean> {
+    return await this.execute(model, 'write', [ids, values], options);
   }
 
   public async unlink(model: string, ids: number[]): Promise<boolean> {
