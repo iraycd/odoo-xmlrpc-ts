@@ -1,5 +1,5 @@
 // src/client.ts
-import * as xmlrpc from 'xmlrpc';
+import xmlrpc from 'xmlrpc';
 
 import {
   OdooConfig,
@@ -8,8 +8,8 @@ import {
   SearchOptions,
   SearchReadOptions,
   OdooDomain,
-} from './types';
-import { OdooError, OdooAuthenticationError } from './errors';
+} from './types.js';
+import { OdooError, OdooAuthenticationError } from './errors.js';
 
 export class OdooClient {
   private common: xmlrpc.Client;
