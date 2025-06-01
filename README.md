@@ -278,6 +278,53 @@ If you're using this client in a browser environment, you might encounter CORS i
 
 Make sure your Odoo instance has XML-RPC enabled and your user has the necessary access rights. For Odoo.sh or Odoo Online instances, you might need to whitelist your IP address.
 
+## Contributors
+
+Thanks to all the amazing contributors who have made this project possible:
+
+<!-- ALL-CONTRIBUTORS-LIST:START -->
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/iraycd">
+        <img src="https://avatars.githubusercontent.com/u/1450984?v=4" width="100px;" alt="Ray Ch"/>
+        <br />
+        <sub><b>Ray Ch</b></sub>
+      </a>
+      <br />
+      <sub>29 contributions</sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Haris565">
+        <img src="https://avatars.githubusercontent.com/u/64888353?v=4" width="100px;" alt="Haris565"/>
+        <br />
+        <sub><b>Haris565</b></sub>
+      </a>
+      <br />
+      <sub>3 contributions</sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Xstoudi">
+        <img src="https://avatars.githubusercontent.com/u/2575182?v=4" width="100px;" alt="Xavier Stouder"/>
+        <br />
+        <sub><b>Xavier Stouder</b></sub>
+      </a>
+      <br />
+      <sub>1 contribution</sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/vendethiel">
+        <img src="https://avatars.githubusercontent.com/u/199499?v=4" width="100px;" alt="ven"/>
+        <br />
+        <sub><b>ven</b></sub>
+      </a>
+      <br />
+      <sub>1 contribution</sub>
+    </td>
+  </tr>
+</table>
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
 ## License
 
 MIT © Dilip Ray Ch
