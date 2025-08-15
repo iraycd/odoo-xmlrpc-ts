@@ -24,8 +24,12 @@ export class OdooClient {
 
     const createClient = protocol === 'https' ? xmlrpc.createSecureClient : xmlrpc.createClient;
 
-    this.common = createClient(`${config.url}/xmlrpc/2/common`);
-    this.object = createClient(`${config?.url}/xmlrpc/2/object`);
+    const clientOptions = {
+      agent: config.agent,
+    };
+
+    this.common = createClient({ ...clientOptions, url: `${config.url}/xmlrpc/2/common` });
+    this.object = createClient({ ...clientOptions, url: `${config.url}/xmlrpc/2/object` });
   }
 
   private methodCall<T>(client: xmlrpc.Client, method: string, params: any[]): Promise<T> {
@@ -130,7 +134,12 @@ export class OdooClient {
     return await this.execute(model, 'create', [values]);
   }
 
-  public async write<T extends object>(model: string, ids: number[], values: T, options: SearchOptions = {}): Promise<boolean> {
+  public async write<T extends object>(
+    model: string,
+    ids: number[],
+    values: T,
+    options: SearchOptions = {},
+  ): Promise<boolean> {
     return await this.execute(model, 'write', [ids, values], options);
   }
 

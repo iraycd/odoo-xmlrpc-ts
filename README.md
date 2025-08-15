@@ -94,6 +94,38 @@ async function example() {
 }
 ```
 
+### HTTP Agent Configuration
+
+You can configure custom HTTP agents for advanced network configurations such as custom SSL settings, or connection pooling:
+
+```typescript
+import { OdooClient } from 'odoo-xmlrpc-ts';
+import https from 'node:https';
+import fs from 'node:fs';
+
+// Example: Custom HTTPS agent with specific SSL options
+const httpsAgent = new https.Agent({
+  ca: fs.readFileSync('/path/to/ca-certificate.pem'), // Custom CA certificate
+  keepAlive: true,
+  maxSockets: 10,
+});
+
+// Alternative: For development/testing only (not recommended for production)
+const httpsAgent = new https.Agent({
+  rejectUnauthorized: false, // Disables SSL verification (use only for testing)
+  keepAlive: true,
+  maxSockets: 10,
+});
+
+const client = new OdooClient({
+  url: 'https://your-odoo-instance.com',
+  db: 'your-database',
+  username: 'admin',
+  password: 'admin',
+  agent: httpsAgent,
+});
+```
+
 ### Advanced Usage
 
 ```typescript
@@ -146,6 +178,7 @@ const client = new OdooClient({
   db: string;     // Database name
   username: string;
   password: string;
+  agent?: https.Agent | http.Agent;  // Optional HTTP agent for custom network configuration
 });
 ```
 

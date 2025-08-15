@@ -1,8 +1,12 @@
+import https from 'node:https';
+import http from 'node:http';
+
 export interface OdooConfig {
   url: string;
   db: string;
   username: string;
   password: string;
+  agent?: https.Agent | http.Agent;
 }
 
 export interface OdooVersion {
