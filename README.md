@@ -98,6 +98,8 @@ async function example() {
 
 You can configure custom HTTP agents for advanced network configurations such as custom SSL settings, or connection pooling:
 
+> **Note**: Odoo doesn't support HTTPS natively. For production deployments, place Odoo behind a reverse proxy (Nginx/Apache) with SSL termination. The agent configuration below is useful when connecting to such HTTPS-enabled Odoo instances.
+
 ```typescript
 import { OdooClient } from 'odoo-xmlrpc-ts';
 import https from 'node:https';
@@ -118,7 +120,7 @@ const httpsAgent = new https.Agent({
 });
 
 const client = new OdooClient({
-  url: 'https://your-odoo-instance.com',
+  url: 'https://your-odoo-instance.com', // HTTPS URL (via reverse proxy)
   db: 'your-database',
   username: 'admin',
   password: 'admin',
@@ -310,6 +312,20 @@ If you're using this client in a browser environment, you might encounter CORS i
 ### Authentication Issues
 
 Make sure your Odoo instance has XML-RPC enabled and your user has the necessary access rights. For Odoo.sh or Odoo Online instances, you might need to whitelist your IP address.
+
+## Notes & Considerations
+
+### HTTPS/SSL Deployment
+- Odoo doesn't provide native HTTPS support (removed since ~v6.1)
+- Production deployments require a reverse proxy (Nginx/Apache) for SSL termination
+- Use `proxy_mode = 1` in Odoo configuration when behind a proxy
+- The HTTP agent configuration is useful for custom SSL certificates and corporate environments
+
+### XML-RPC vs JSON-RPC
+- This library uses Odoo's XML-RPC endpoints (`/xmlrpc/2/common`, `/xmlrpc/2/object`)
+- Odoo also provides JSON-RPC endpoints (`/jsonrpc`) - these are separate protocols
+- Both provide the same functionality; JSON-RPC is lighter weight
+- XML-RPC is well-documented with many examples and good TypeScript support
 
 ## Contributors
 
