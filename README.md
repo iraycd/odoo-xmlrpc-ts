@@ -1,6 +1,12 @@
 # odoo-xmlrpc-ts
 
+[![npm version](https://badge.fury.io/js/odoo-xmlrpc-ts.svg)](https://www.npmjs.com/package/odoo-xmlrpc-ts)
+[![GitHub](https://img.shields.io/github/license/iraycd/odoo-xmlrpc-ts)](https://github.com/iraycd/odoo-xmlrpc-ts)
+[![GitHub stars](https://img.shields.io/github/stars/iraycd/odoo-xmlrpc-ts)](https://github.com/iraycd/odoo-xmlrpc-ts)
+
 A type-safe Odoo XML-RPC client for Node.js written in TypeScript. This package provides a robust interface to interact with Odoo's external API through XML-RPC.
+
+📦 **[npm package](https://www.npmjs.com/package/odoo-xmlrpc-ts)** | 🔗 **[GitHub repository](https://github.com/iraycd/odoo-xmlrpc-ts)**
 
 ## Features
 
@@ -366,6 +372,15 @@ Thanks to all the amazing contributors who have made this project possible:
         <img src="https://avatars.githubusercontent.com/u/199499?v=4" width="100px;" alt="ven"/>
         <br />
         <sub><b>ven</b></sub>
+      </a>
+      <br />
+      <sub>1 contribution</sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/villalobos-05">
+        <img src="https://avatars.githubusercontent.com/u/71589059?v=4" width="100px;" alt="Daniel Villalobos"/>
+        <br />
+        <sub><b>Daniel Villalobos</b></sub>
       </a>
       <br />
       <sub>1 contribution</sub>
