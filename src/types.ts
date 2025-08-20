@@ -36,8 +36,13 @@ export interface SearchOptions {
   order?: string;
 }
 
+export interface SearchContext {
+  lang?: string;
+}
+
 export interface SearchReadOptions extends SearchOptions {
   fields?: string[];
+  context?: SearchContext
 }
 
 export type OdooDomain = Array<[string, string, any]>;
